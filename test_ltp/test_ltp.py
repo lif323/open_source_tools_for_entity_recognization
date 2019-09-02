@@ -41,12 +41,21 @@ def get_recognized_data(src_text="", model_dir=""):
             for sentence in sentence_list:
                 words, netags = deal_one_sentence(sentence, segmentor, postagger, recognizer)
                 for word, tag in zip(words, netags):
-                    if tag != "o":
+                    if tag != "O":
                         recognized_entity.add(word)
     return recognized_entity
 
 if __name__ == "__main__":
+    # 数据路径
     data_path = os.path.join(os.path.dirname(__file__) + "/../data/problem.txt")
-    recognized_entity = get_recognized_data(src_text=data_path, model_dir=os.path.dirname(__file__) + "/model/ltp_data_v3.4.0")
-    print(recognized_entity)
+    # model路径
+    model_path = os.path.dirname(__file__) + "/model/ltp_data_v3.4.0"
+    recognized_entity = get_recognized_data(src_text=data_path, model_dir=model_path)
+    # 查看前100个
+    recognized_entity = list(recognized_entity)[:100]
+    result_path = os.path.dirname(__file__) +"/result.txt"
+    with open(result_path, "w") as fp:
+        for i in range(10):
+            fp.write(str(recognized_entity[i: i + 10]) + "\n")
+                
     
