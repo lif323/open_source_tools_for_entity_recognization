@@ -41,4 +41,4 @@ I-XX表示实体名中间的,末尾的词语
 - `test_stanfordcorenlp.py`用于测试
 - `test_stanford_corenlp/result.txt`保存了部分识别结果
 ## 测试结果
-corenlp相比于前两个工具,效果最好,识别更大范围的实体,但是也不能识别目标实体.
+corenlp相比于前两个工具,**效果最好**,识别更大范围的实体,但是也不能识别目标实体.
