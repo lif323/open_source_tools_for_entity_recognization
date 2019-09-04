@@ -2,16 +2,19 @@
 
 - [源数据处理](#源数据处理)
 - [ltp](#ltp)
-    - [技术原理](#技术原理)
+    - [配置](#配置)
     - [结构](#结构)
+    - [技术原理](#技术原理)
     - [测试结果](#测试结果)
 - [Jiagu](#jiagu)
+    - [配置](#配置-1)
     - [结构](#结构-1)
     - [技术原理](#技术原理-1)
     - [测试结果](#测试结果-1)
 - [coreNLP](#corenlp)
-    - [技术原理](#技术原理-2)
+    - [配置](#配置-2)
     - [结构](#结构-2)
+    - [技术原理](#技术原理-2)
     - [测试结果](#测试结果-2)
 
 <!-- /TOC -->
@@ -69,12 +72,13 @@ I-XX表示实体名中间的,末尾的词语
 - 解压CoreNLP到`path/to/corenlp`，将中文包放置到该文件夹下。
 - `pip install stanfordcorenlp`
 - 调用方式`nlp = StanfordCoreNLP("path/to/corenlp", lang="zh")`
+## 结构
+- `test_stanfordcorenlp.py`用于测试
+- `test_stanford_corenlp/result.txt`保存了部分识别结果
 ## 技术原理
 论文:Manning, Christopher D., Mihai Surdeanu, John Bauer, Jenny Finkel, Steven J. Bethard, and David McClosky. 2014. The Stanford CoreNLP Natural Language Processing Toolkit In Proceedings of the 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations, pp. 55-60.
 - **模型**: 主要使用的是CRF.
 - **语料**: CoNLL, ACE, MUC, ERE
-## 结构
-- `test_stanfordcorenlp.py`用于测试
-- `test_stanford_corenlp/result.txt`保存了部分识别结果
+
 ## 测试结果
 corenlp相比于前两个工具,**效果最好**,识别更大范围的实体,但是也不能识别目标实体.
