@@ -1,9 +1,5 @@
 import jiagu
 import os
-################
-#Jiagu
-#结果不是很好
-###############
 def extract_named_entity(tag_lsit, text_list):
         named_entity = set()
         now = ""
@@ -40,7 +36,7 @@ if __name__ == "__main__":
         result_path = os.path.dirname(__file__) +"/result.txt"
         with open(result_path, "w") as fp:
                 for i in range(10):
-                        fp.write(str(recognized_entity[i: i + 10]) + "\n")
+                        fp.write(str(recognized_entity[i*10 : i*10+10]) + "\n")
 
 
         # 处理纯中文文本 这里为了比较纯中文,中英混杂的不同情况下,处理结果的差异
@@ -51,7 +47,7 @@ if __name__ == "__main__":
         result_path = os.path.dirname(__file__) +"/result_sample.txt"
         with open(result_path, "w") as fp:
                 for i in range(10):
-                        fp.write(str(recognized_entity[i: i + 10]) + "\n")
+                        fp.write(str(recognized_entity[i*10 : i*10+10]) + "\n")
 
         
         

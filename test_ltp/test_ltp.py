@@ -56,6 +56,6 @@ if __name__ == "__main__":
     result_path = os.path.dirname(__file__) +"/result.txt"
     with open(result_path, "w") as fp:
         for i in range(10):
-            fp.write(str(recognized_entity[i: i + 10]) + "\n")
+            fp.write(str(recognized_entity[i * 10: i * 10 + 10]) + "\n")
                 
     
