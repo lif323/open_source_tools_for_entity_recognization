@@ -19,12 +19,14 @@ def get_recognized_entity(src_text, model_path):
     return recognized_entity
 
 if __name__ == "__main__":
-    data_path = os.path.dirname(__file__) + "/../data/problem.txt"
-    model_path = os.path.dirname(__file__) + "/model/stanford-corenlp-full-2018-10-05"
+    data_path = "../data/text.txt"
+    model_path = "../model/stanford-corenlp-full-2018-10-05/"
     recognized_entity = get_recognized_entity(data_path, model_path)
+    print(recognized_entity)
+    os._exit(0)
 
     # 保存前100个数据
-    recognized_entity = list(recognized_entity)[:100]
+    #recognized_entity = list(recognized_entity)[:100]
     result_path = os.path.dirname(__file__) +"/result.txt"
     with open(result_path, "w") as fp:
         for i in range(10):
